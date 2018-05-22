@@ -1,6 +1,8 @@
 # NbaFantasyRank
 Educational project 
 
+Project purpose and desc you can find in PROJECT_DESC file
+
 This app is constructed as Maven project. 
 
 It has been written in Eclipse and for now I advise to use this IDE to launch it.
