@@ -4,8 +4,10 @@ Welcome!
 Main purpose of this project is too gain knowledge in Java and frameworks like Hibernate or Spring (in future). 
 I am using MySQL database and Tomcat 9.0 server. Application is written in Eclipse and 
 In final version this app should be handful tool for NBA Fantasy leagues players. Main functionality will be advising which NBA player should be chosen to your team to help you win, by tracking trends in single statistic  (Points, assists, blocks  etc.). It is mainly directed to H2H type of leagues.
+
 More information about NBA Fantasy game you can find under this link:
 
+https://en.wikipedia.org/wiki/Fantasy_basketball
 
 Version 1.0 is showing on web page table of NBA teams. This is good start to creating more features as I have learned how to fill SQL table using JSON and how I should use hibernate to retrieve and save data in DB. I have also gained basic knowledge about Servlets. 
 Apart of it I also refresh knowledge how to set up Web project as Maven project and how connect server to your application.
