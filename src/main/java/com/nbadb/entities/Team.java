@@ -2,11 +2,15 @@ package com.nbadb.entities;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -18,14 +22,14 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="teams")
+@Table(name="TEAM")
 @Access(value=AccessType.FIELD)
-public class Teams {
+public class Team {
 	
 	@Id
 	@Column(name="TEAM_ID", unique=true, nullable=false, insertable = false, updatable = false)
 	private Long teamId;
-
+	
 	@Column(name="IS_NBA_TEAM")
 	private Boolean isNbaTeam;
 

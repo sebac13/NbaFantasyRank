@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.nbadb.json2pojo.nbaTeams.NbaTeams;
+import com.nbadb.json2pojo.players.NbaPlayers;
 /**
  * 
  * @author SCieslinski
@@ -25,16 +26,19 @@ public class Client {
 
 	public static void main(String[] args) {
 		BufferedReader bufferedReader = null;
+		NbaPlayers nbaPlayers;
 		NbaTeams nbaTeams;
 
 		try {
 			URL urlTeams = new URL("http://data.nba.net/data/10s/prod/v1/2017/teams.json");
-			bufferedReader = new BufferedReader(new InputStreamReader(urlTeams.openStream()));
+			URL urlPlayers = new URL("http://data.nba.net/data/10s/prod/v1/2017/players.json");
+			
+			bufferedReader = new BufferedReader(new InputStreamReader(urlPlayers.openStream()));
 			
 			Gson gson = new GsonBuilder().create();
 			String s = bufferedReader.lines().collect(Collectors.joining());
-			nbaTeams = gson.fromJson(s, NbaTeams.class);
-			System.out.println(nbaTeams.getInternal().getPubDateTime());
+			nbaPlayers = gson.fromJson(s, NbaPlayers.class);
+			System.out.println(nbaPlayers.getLeague().getStandard().get(0).getTeamId());
 
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");

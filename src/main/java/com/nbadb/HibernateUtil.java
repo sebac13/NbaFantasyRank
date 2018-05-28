@@ -4,7 +4,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import com.nbadb.entities.Teams;
+import com.nbadb.entities.Player;
+import com.nbadb.entities.Team;
 
 
 public class HibernateUtil {
@@ -14,7 +15,8 @@ public class HibernateUtil {
 	private static SessionFactory buildSessionFactory() {
 		try {
 			Configuration configuration = new Configuration();
-			configuration.addAnnotatedClass(Teams.class); 
+			configuration.addAnnotatedClass(Team.class);
+			configuration.addAnnotatedClass(Player.class);
 
 			configuration.configure();
 			return configuration

@@ -8,7 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 
 import com.nbadb.HibernateUtil;
-import com.nbadb.entities.Teams;
+import com.nbadb.entities.Team;
 
 
 /**
@@ -26,15 +26,15 @@ public class DatabaseRetriver {
 	private Session session;
 	private org.hibernate.Transaction tx;
 
-	public List<Teams> getNBATeams(){
+	public List<Team> getNBATeams(){
 		
-		List<Teams> allTeams = null;
+		List<Team> allTeams = null;
 		try {
 			sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
 			
-			Query query = session.createQuery("select t from Teams t");
+			Query query = session.createQuery("select t from Team t");
 			allTeams = query.list();
 
 			tx.commit();

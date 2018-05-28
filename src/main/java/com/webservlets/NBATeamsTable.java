@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.nbadb.entities.Teams;
+import com.nbadb.entities.Team;
 import com.nbaservices.DatabaseRetriver;
 
 /**
@@ -26,7 +26,7 @@ import com.nbaservices.DatabaseRetriver;
 public class NBATeamsTable extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	SessionFactory c = new Configuration().configure().buildSessionFactory();
-	List<Teams> allTeams = new DatabaseRetriver().getNBATeams();
+	List<Team> allTeams = new DatabaseRetriver().getNBATeams();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -46,7 +46,7 @@ public class NBATeamsTable extends HttpServlet {
 		 * v1.0 of Teams table
 		 */
 		out.print("<table>");
-		for (Teams team : allTeams) {
+		for (Team team : allTeams) {
 			out.print("<tr>");
 			out.print("<td>" + team.getCity() + "</td>");
 			out.print("<td>" + team.getConference() + "</td>");
